@@ -3650,6 +3650,91 @@
    "id": "966bcc7a2d0746bc88e34332b264d50b",
    "created_at": "2026-09-24T01:46:59.870044+00:00",
    "updated_at": "2026-09-24T01:46:59.870063+00:00"
+  },
+  "30994a2732294a7daf1f3f368ea99f5b": {
+   "user_id": "ebef256a1b6641faaaf6d91790062b96",
+   "text": "Show flood affected areas in Kerala in August 2024 using SAR data",
+   "understanding": {
+    "query_text": "Show flood affected areas in Kerala in August 2024 using SAR data",
+    "raw_text": "Show flood affected areas in Kerala in August 2024 using SAR data",
+    "location": "Kerala",
+    "location_key": "kerala",
+    "bbox": {
+     "min_lng": 74.8,
+     "min_lat": 8.0,
+     "max_lng": 77.6,
+     "max_lat": 12.8
+    },
+    "date_start": "2024-08-01",
+    "date_end": "2024-08-31",
+    "phenomenon": "flood",
+    "data_type": "SAR",
+    "requested_analysis": "flood-mapping",
+    "agent": "sar",
+    "agent_confidence": 1.0,
+    "analysis_type": "flood-mapping",
+    "confidence": 0.97,
+    "explanation": [
+     "Detected location: Kerala (state, India).",
+     "Detected phenomenon: Flood.",
+     "Detected data type preference: SAR.",
+     "Date range 2024-08-01 to 2024-08-31 (month 2024).",
+     "Requested analysis: Flood Mapping.",
+     "Recommended agent: SAR Agent."
+    ]
+   },
+   "agent": "SAR Agent",
+   "model": "sar-flood-watermask-v1 (demo deterministic model)",
+   "datasets_used": [
+    "ds_demo_sar_kerala_flood",
+    "ds_demo_tabular_rainfall_india"
+   ],
+   "execution_trace": {
+    "target_task": "Flood Mapping",
+    "modality": {
+     "id": "sar",
+     "label": "Sentinel-1 C-band SAR (all-weather, day/night)",
+     "sensors": [
+      "Sentinel-1 C-SAR (VV/VH)"
+     ],
+     "constraints": "Backscatter σ⁰ signatures decoded from intensity envelope; specular water ~ low σ⁰."
+    },
+    "tools": [
+     "SAR water mask with threshold segmentation"
+    ],
+    "steps": [
+     {
+      "step": 1,
+      "tool": "SAR water mask with threshold segmentation",
+      "op": "flood-mapping",
+      "detail": "Executed on Kerala Monsoon Flood Footprints (SAR)",
+      "result": {
+       "features": 43,
+       "stats": {
+        "affected_area_km2": 3315.47,
+        "affected_cells": 43,
+        "detected_fraction": 0.021,
+        "estimated_population": 2715370,
+        "population_density_per_km2": 819,
+        "mean_intensity": 0.701,
+        "max_intensity": 0.753,
+        "peak_date": "2024-08-17",
+        "threshold": 0.669
+       },
+       "label": "Flood Mapping"
+      }
+     }
+    ],
+    "confidence": 0.68,
+    "uncertainties": [
+     "Simulated demo dataset — spatial features are illustrative placeholders, not real observations.",
+     "Cross-modal verification carried out on simulated geometry."
+    ]
+   },
+   "status": "completed",
+   "id": "30994a2732294a7daf1f3f368ea99f5b",
+   "created_at": "2026-09-24T03:55:42.434077+00:00",
+   "updated_at": "2026-09-24T03:55:42.434096+00:00"
   }
  },
  "datasets": {
@@ -6823,6 +6908,34 @@
    "id": "435731742b4940fd94361a3e65dacaee",
    "created_at": "2026-09-24T01:47:00.323052+00:00",
    "updated_at": "2026-09-24T01:47:00.323086+00:00"
+  },
+  "6d784bf48c42453fb09226fb5323bf04": {
+   "user_id": "ebef256a1b6641faaaf6d91790062b96",
+   "text": "Show flood affected areas in Kerala in August 2024 using SAR data",
+   "status": "completed",
+   "progress": 100,
+   "stage": "saved",
+   "message": "Saving analysis",
+   "id": "6d784bf48c42453fb09226fb5323bf04",
+   "created_at": "2026-09-24T03:55:40.717032+00:00",
+   "updated_at": "2026-09-24T03:55:43.250289+00:00",
+   "stage_name": "Saving analysis",
+   "result_id": "ffb975da119b4e53ad0c5fb19d3763e0",
+   "query_id": "30994a2732294a7daf1f3f368ea99f5b",
+   "op": "flood-mapping"
+  },
+  "1cffbb62c94c4bf2bf839fe62fd629aa": {
+   "user_id": "ebef256a1b6641faaaf6d91790062b96",
+   "query_id": "30994a2732294a7daf1f3f368ea99f5b",
+   "result_id": "ffb975da119b4e53ad0c5fb19d3763e0",
+   "status": "completed",
+   "progress": 100,
+   "stage": "saved",
+   "message": "Analysis complete.",
+   "op": "flood-mapping",
+   "id": "1cffbb62c94c4bf2bf839fe62fd629aa",
+   "created_at": "2026-09-24T03:55:42.838941+00:00",
+   "updated_at": "2026-09-24T03:55:42.838962+00:00"
   }
  },
  "results": {
@@ -477415,6 +477528,1770 @@
    "id": "89129d05e3a74f5c98ff4a7be4c14d4b",
    "created_at": "2026-09-24T01:47:00.123006+00:00",
    "updated_at": "2026-09-24T01:47:00.123031+00:00"
+  },
+  "ffb975da119b4e53ad0c5fb19d3763e0": {
+   "user_id": "ebef256a1b6641faaaf6d91790062b96",
+   "query_id": "30994a2732294a7daf1f3f368ea99f5b",
+   "op": "flood-mapping",
+   "label": "Flood Mapping",
+   "confidence": 0.68,
+   "geojson": {
+    "type": "FeatureCollection",
+    "properties": {
+     "title": "Simulated flood-water extent",
+     "simulated": true
+    },
+    "features": [
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 11.8,
+       "lng": 77.56,
+       "value": 0.9147
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.52,
+          11.760000000000002
+         ],
+         [
+          77.60000000000001,
+          11.760000000000002
+         ],
+         [
+          77.60000000000001,
+          11.84
+         ],
+         [
+          77.52,
+          11.84
+         ],
+         [
+          77.52,
+          11.760000000000002
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 12.12,
+       "lng": 77.56,
+       "value": 0.9118
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.52,
+          12.08
+         ],
+         [
+          77.60000000000001,
+          12.08
+         ],
+         [
+          77.60000000000001,
+          12.159999999999998
+         ],
+         [
+          77.52,
+          12.159999999999998
+         ],
+         [
+          77.52,
+          12.08
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 11.56,
+       "lng": 77.56,
+       "value": 0.9117
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.52,
+          11.520000000000001
+         ],
+         [
+          77.60000000000001,
+          11.520000000000001
+         ],
+         [
+          77.60000000000001,
+          11.6
+         ],
+         [
+          77.52,
+          11.6
+         ],
+         [
+          77.52,
+          11.520000000000001
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 11.96,
+       "lng": 77.56,
+       "value": 0.8899
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.52,
+          11.920000000000002
+         ],
+         [
+          77.60000000000001,
+          11.920000000000002
+         ],
+         [
+          77.60000000000001,
+          12.0
+         ],
+         [
+          77.52,
+          12.0
+         ],
+         [
+          77.52,
+          11.920000000000002
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 11.72,
+       "lng": 77.32,
+       "value": 0.8869
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.27999999999999,
+          11.680000000000001
+         ],
+         [
+          77.36,
+          11.680000000000001
+         ],
+         [
+          77.36,
+          11.76
+         ],
+         [
+          77.27999999999999,
+          11.76
+         ],
+         [
+          77.27999999999999,
+          11.680000000000001
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 12.2,
+       "lng": 77.48,
+       "value": 0.8828
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.44,
+          12.16
+         ],
+         [
+          77.52000000000001,
+          12.16
+         ],
+         [
+          77.52000000000001,
+          12.239999999999998
+         ],
+         [
+          77.44,
+          12.239999999999998
+         ],
+         [
+          77.44,
+          12.16
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 12.04,
+       "lng": 77.48,
+       "value": 0.8809
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.44,
+          12.0
+         ],
+         [
+          77.52000000000001,
+          12.0
+         ],
+         [
+          77.52000000000001,
+          12.079999999999998
+         ],
+         [
+          77.44,
+          12.079999999999998
+         ],
+         [
+          77.44,
+          12.0
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 11.48,
+       "lng": 77.48,
+       "value": 0.8781
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.44,
+          11.440000000000001
+         ],
+         [
+          77.52000000000001,
+          11.440000000000001
+         ],
+         [
+          77.52000000000001,
+          11.52
+         ],
+         [
+          77.44,
+          11.52
+         ],
+         [
+          77.44,
+          11.440000000000001
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 11.32,
+       "lng": 77.56,
+       "value": 0.8774
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.52,
+          11.280000000000001
+         ],
+         [
+          77.60000000000001,
+          11.280000000000001
+         ],
+         [
+          77.60000000000001,
+          11.36
+         ],
+         [
+          77.52,
+          11.36
+         ],
+         [
+          77.52,
+          11.280000000000001
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 12.28,
+       "lng": 77.4,
+       "value": 0.8766
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.36,
+          12.24
+         ],
+         [
+          77.44000000000001,
+          12.24
+         ],
+         [
+          77.44000000000001,
+          12.319999999999999
+         ],
+         [
+          77.36,
+          12.319999999999999
+         ],
+         [
+          77.36,
+          12.24
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 11.64,
+       "lng": 77.32,
+       "value": 0.8757
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.27999999999999,
+          11.600000000000001
+         ],
+         [
+          77.36,
+          11.600000000000001
+         ],
+         [
+          77.36,
+          11.68
+         ],
+         [
+          77.27999999999999,
+          11.68
+         ],
+         [
+          77.27999999999999,
+          11.600000000000001
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 11.96,
+       "lng": 77.48,
+       "value": 0.8731
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.44,
+          11.920000000000002
+         ],
+         [
+          77.52000000000001,
+          11.920000000000002
+         ],
+         [
+          77.52000000000001,
+          12.0
+         ],
+         [
+          77.44,
+          12.0
+         ],
+         [
+          77.44,
+          11.920000000000002
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 12.04,
+       "lng": 77.56,
+       "value": 0.868
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.52,
+          12.0
+         ],
+         [
+          77.60000000000001,
+          12.0
+         ],
+         [
+          77.60000000000001,
+          12.079999999999998
+         ],
+         [
+          77.52,
+          12.079999999999998
+         ],
+         [
+          77.52,
+          12.0
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 12.2,
+       "lng": 77.56,
+       "value": 0.8678
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.52,
+          12.16
+         ],
+         [
+          77.60000000000001,
+          12.16
+         ],
+         [
+          77.60000000000001,
+          12.239999999999998
+         ],
+         [
+          77.52,
+          12.239999999999998
+         ],
+         [
+          77.52,
+          12.16
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 11.64,
+       "lng": 77.56,
+       "value": 0.8665
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.52,
+          11.600000000000001
+         ],
+         [
+          77.60000000000001,
+          11.600000000000001
+         ],
+         [
+          77.60000000000001,
+          11.68
+         ],
+         [
+          77.52,
+          11.68
+         ],
+         [
+          77.52,
+          11.600000000000001
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 11.88,
+       "lng": 77.32,
+       "value": 0.8622
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.27999999999999,
+          11.840000000000002
+         ],
+         [
+          77.36,
+          11.840000000000002
+         ],
+         [
+          77.36,
+          11.92
+         ],
+         [
+          77.27999999999999,
+          11.92
+         ],
+         [
+          77.27999999999999,
+          11.840000000000002
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 12.28,
+       "lng": 77.24,
+       "value": 0.8593
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.19999999999999,
+          12.24
+         ],
+         [
+          77.28,
+          12.24
+         ],
+         [
+          77.28,
+          12.319999999999999
+         ],
+         [
+          77.19999999999999,
+          12.319999999999999
+         ],
+         [
+          77.19999999999999,
+          12.24
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 12.12,
+       "lng": 77.4,
+       "value": 0.8574
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.36,
+          12.08
+         ],
+         [
+          77.44000000000001,
+          12.08
+         ],
+         [
+          77.44000000000001,
+          12.159999999999998
+         ],
+         [
+          77.36,
+          12.159999999999998
+         ],
+         [
+          77.36,
+          12.08
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 12.2,
+       "lng": 77.32,
+       "value": 0.8533
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.27999999999999,
+          12.16
+         ],
+         [
+          77.36,
+          12.16
+         ],
+         [
+          77.36,
+          12.239999999999998
+         ],
+         [
+          77.27999999999999,
+          12.239999999999998
+         ],
+         [
+          77.27999999999999,
+          12.16
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 11.88,
+       "lng": 77.4,
+       "value": 0.8526
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.36,
+          11.840000000000002
+         ],
+         [
+          77.44000000000001,
+          11.840000000000002
+         ],
+         [
+          77.44000000000001,
+          11.92
+         ],
+         [
+          77.36,
+          11.92
+         ],
+         [
+          77.36,
+          11.840000000000002
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 11.48,
+       "lng": 77.32,
+       "value": 0.8466
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.27999999999999,
+          11.440000000000001
+         ],
+         [
+          77.36,
+          11.440000000000001
+         ],
+         [
+          77.36,
+          11.52
+         ],
+         [
+          77.27999999999999,
+          11.52
+         ],
+         [
+          77.27999999999999,
+          11.440000000000001
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 11.96,
+       "lng": 77.32,
+       "value": 0.8451
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.27999999999999,
+          11.920000000000002
+         ],
+         [
+          77.36,
+          11.920000000000002
+         ],
+         [
+          77.36,
+          12.0
+         ],
+         [
+          77.27999999999999,
+          12.0
+         ],
+         [
+          77.27999999999999,
+          11.920000000000002
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 11.64,
+       "lng": 77.08,
+       "value": 0.8448
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.03999999999999,
+          11.600000000000001
+         ],
+         [
+          77.12,
+          11.600000000000001
+         ],
+         [
+          77.12,
+          11.68
+         ],
+         [
+          77.03999999999999,
+          11.68
+         ],
+         [
+          77.03999999999999,
+          11.600000000000001
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 11.64,
+       "lng": 77.48,
+       "value": 0.8413
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.44,
+          11.600000000000001
+         ],
+         [
+          77.52000000000001,
+          11.600000000000001
+         ],
+         [
+          77.52000000000001,
+          11.68
+         ],
+         [
+          77.44,
+          11.68
+         ],
+         [
+          77.44,
+          11.600000000000001
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 12.04,
+       "lng": 77.32,
+       "value": 0.8398
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.27999999999999,
+          12.0
+         ],
+         [
+          77.36,
+          12.0
+         ],
+         [
+          77.36,
+          12.079999999999998
+         ],
+         [
+          77.27999999999999,
+          12.079999999999998
+         ],
+         [
+          77.27999999999999,
+          12.0
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 12.44,
+       "lng": 77.48,
+       "value": 0.8392
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.44,
+          12.4
+         ],
+         [
+          77.52000000000001,
+          12.4
+         ],
+         [
+          77.52000000000001,
+          12.479999999999999
+         ],
+         [
+          77.44,
+          12.479999999999999
+         ],
+         [
+          77.44,
+          12.4
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 12.28,
+       "lng": 77.32,
+       "value": 0.837
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.27999999999999,
+          12.24
+         ],
+         [
+          77.36,
+          12.24
+         ],
+         [
+          77.36,
+          12.319999999999999
+         ],
+         [
+          77.27999999999999,
+          12.319999999999999
+         ],
+         [
+          77.27999999999999,
+          12.24
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 11.88,
+       "lng": 77.48,
+       "value": 0.8367
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.44,
+          11.840000000000002
+         ],
+         [
+          77.52000000000001,
+          11.840000000000002
+         ],
+         [
+          77.52000000000001,
+          11.92
+         ],
+         [
+          77.44,
+          11.92
+         ],
+         [
+          77.44,
+          11.840000000000002
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 11.48,
+       "lng": 77.24,
+       "value": 0.8357
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.19999999999999,
+          11.440000000000001
+         ],
+         [
+          77.28,
+          11.440000000000001
+         ],
+         [
+          77.28,
+          11.52
+         ],
+         [
+          77.19999999999999,
+          11.52
+         ],
+         [
+          77.19999999999999,
+          11.440000000000001
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 11.4,
+       "lng": 77.4,
+       "value": 0.8357
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.36,
+          11.360000000000001
+         ],
+         [
+          77.44000000000001,
+          11.360000000000001
+         ],
+         [
+          77.44000000000001,
+          11.44
+         ],
+         [
+          77.36,
+          11.44
+         ],
+         [
+          77.36,
+          11.360000000000001
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 11.8,
+       "lng": 77.4,
+       "value": 0.8321
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.36,
+          11.760000000000002
+         ],
+         [
+          77.44000000000001,
+          11.760000000000002
+         ],
+         [
+          77.44000000000001,
+          11.84
+         ],
+         [
+          77.36,
+          11.84
+         ],
+         [
+          77.36,
+          11.760000000000002
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 11.56,
+       "lng": 77.48,
+       "value": 0.8305
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.44,
+          11.520000000000001
+         ],
+         [
+          77.52000000000001,
+          11.520000000000001
+         ],
+         [
+          77.52000000000001,
+          11.6
+         ],
+         [
+          77.44,
+          11.6
+         ],
+         [
+          77.44,
+          11.520000000000001
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 12.2,
+       "lng": 77.16,
+       "value": 0.8288
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.11999999999999,
+          12.16
+         ],
+         [
+          77.2,
+          12.16
+         ],
+         [
+          77.2,
+          12.239999999999998
+         ],
+         [
+          77.11999999999999,
+          12.239999999999998
+         ],
+         [
+          77.11999999999999,
+          12.16
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 8.12,
+       "lng": 77.56,
+       "value": 0.8233
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.52,
+          8.08
+         ],
+         [
+          77.60000000000001,
+          8.08
+         ],
+         [
+          77.60000000000001,
+          8.159999999999998
+         ],
+         [
+          77.52,
+          8.159999999999998
+         ],
+         [
+          77.52,
+          8.08
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 12.04,
+       "lng": 77.16,
+       "value": 0.8211
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.11999999999999,
+          12.0
+         ],
+         [
+          77.2,
+          12.0
+         ],
+         [
+          77.2,
+          12.079999999999998
+         ],
+         [
+          77.11999999999999,
+          12.079999999999998
+         ],
+         [
+          77.11999999999999,
+          12.0
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 11.64,
+       "lng": 77.24,
+       "value": 0.8204
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.19999999999999,
+          11.600000000000001
+         ],
+         [
+          77.28,
+          11.600000000000001
+         ],
+         [
+          77.28,
+          11.68
+         ],
+         [
+          77.19999999999999,
+          11.68
+         ],
+         [
+          77.19999999999999,
+          11.600000000000001
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 12.04,
+       "lng": 77.0,
+       "value": 0.8186
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          76.96,
+          12.0
+         ],
+         [
+          77.04,
+          12.0
+         ],
+         [
+          77.04,
+          12.079999999999998
+         ],
+         [
+          76.96,
+          12.079999999999998
+         ],
+         [
+          76.96,
+          12.0
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 11.96,
+       "lng": 77.16,
+       "value": 0.8177
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.11999999999999,
+          11.920000000000002
+         ],
+         [
+          77.2,
+          11.920000000000002
+         ],
+         [
+          77.2,
+          12.0
+         ],
+         [
+          77.11999999999999,
+          12.0
+         ],
+         [
+          77.11999999999999,
+          11.920000000000002
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 11.64,
+       "lng": 77.0,
+       "value": 0.816
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          76.96,
+          11.600000000000001
+         ],
+         [
+          77.04,
+          11.600000000000001
+         ],
+         [
+          77.04,
+          11.68
+         ],
+         [
+          76.96,
+          11.68
+         ],
+         [
+          76.96,
+          11.600000000000001
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 12.28,
+       "lng": 77.08,
+       "value": 0.8153
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.03999999999999,
+          12.24
+         ],
+         [
+          77.12,
+          12.24
+         ],
+         [
+          77.12,
+          12.319999999999999
+         ],
+         [
+          77.03999999999999,
+          12.319999999999999
+         ],
+         [
+          77.03999999999999,
+          12.24
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 12.12,
+       "lng": 77.16,
+       "value": 0.8141
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.11999999999999,
+          12.08
+         ],
+         [
+          77.2,
+          12.08
+         ],
+         [
+          77.2,
+          12.159999999999998
+         ],
+         [
+          77.11999999999999,
+          12.159999999999998
+         ],
+         [
+          77.11999999999999,
+          12.08
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 11.88,
+       "lng": 77.56,
+       "value": 0.8126
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.52,
+          11.840000000000002
+         ],
+         [
+          77.60000000000001,
+          11.840000000000002
+         ],
+         [
+          77.60000000000001,
+          11.92
+         ],
+         [
+          77.52,
+          11.92
+         ],
+         [
+          77.52,
+          11.840000000000002
+         ]
+        ]
+       ]
+      }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+       "lat": 12.28,
+       "lng": 77.16,
+       "value": 0.8126
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          77.11999999999999,
+          12.24
+         ],
+         [
+          77.2,
+          12.24
+         ],
+         [
+          77.2,
+          12.319999999999999
+         ],
+         [
+          77.11999999999999,
+          12.319999999999999
+         ],
+         [
+          77.11999999999999,
+          12.24
+         ]
+        ]
+       ]
+      }
+     }
+    ]
+   },
+   "layers": [],
+   "stats": {
+    "affected_area_km2": 3315.47,
+    "affected_cells": 43,
+    "detected_fraction": 0.021,
+    "estimated_population": 2715370,
+    "population_density_per_km2": 819,
+    "mean_intensity": 0.701,
+    "max_intensity": 0.753,
+    "peak_date": "2024-08-17",
+    "threshold": 0.669
+   },
+   "charts": {
+    "timeseries": [
+     {
+      "date": "2024-08-03",
+      "value": 1755.28
+     },
+     {
+      "date": "2024-08-10",
+      "value": 3003.12
+     },
+     {
+      "date": "2024-08-17",
+      "value": 3315.47
+     },
+     {
+      "date": "2024-08-24",
+      "value": 2592.98
+     },
+     {
+      "date": "2024-08-31",
+      "value": 1861.27
+     }
+    ],
+    "categories": [
+     {
+      "name": "Severe",
+      "value": 0
+     },
+     {
+      "name": "High",
+      "value": 33
+     },
+     {
+      "name": "Moderate",
+      "value": 10
+     },
+     {
+      "name": "Minor",
+      "value": 0
+     }
+    ],
+    "histogram": [
+     {
+      "bucket": 0.031,
+      "count": 76
+     },
+     {
+      "bucket": 0.121,
+      "count": 180
+     },
+     {
+      "bucket": 0.211,
+      "count": 253
+     },
+     {
+      "bucket": 0.302,
+      "count": 382
+     },
+     {
+      "bucket": 0.392,
+      "count": 598
+     },
+     {
+      "bucket": 0.482,
+      "count": 405
+     },
+     {
+      "bucket": 0.573,
+      "count": 157
+     },
+     {
+      "bucket": 0.663,
+      "count": 49
+     }
+    ]
+   },
+   "metadata": {
+    "source": "DEMO",
+    "simulated": true,
+    "data_type": "SAR",
+    "satellite": "Sentinel-1 C-SAR (simulated)",
+    "resolution": "10 m",
+    "model": "sar-flood-watermask-v1",
+    "license": "Demo simulated data — NOT real satellite imagery"
+   },
+   "verification": {
+    "status": "passed",
+    "score": 0.77,
+    "checks": [
+     {
+      "name": "Geometry integrity",
+      "level": "passed",
+      "detail": "All 43 polygons within the AOI and topologically valid."
+     },
+     {
+      "name": "Statistical bounds",
+      "level": "passed",
+      "detail": "Detected extent 3315.47 km2 ≤ AOI 162716.4 km2 ✓"
+     },
+     {
+      "name": "Data provenance",
+      "level": "warning",
+      "detail": "DEMO simulated dataset — results are illustrative, not real satellite observations. Real processing activates when live providers are available."
+     },
+     {
+      "name": "Confidence calibration",
+      "level": "passed",
+      "detail": "Model confidence 0.68 within valid range."
+     }
+    ],
+    "verified_at_utc": "2026-09-24T03:55:42.036608+00:00"
+   },
+   "summary": {
+    "highlights": [
+     "Estimated 3,315 km² of Kerala flagged for flood extent.",
+     "Approximately 2,715,370 people reside in the affected extent (based on reference density).",
+     "Event activity peaked around 2024-08-17."
+    ],
+    "narrative": "SatQuery AI analysed Kerala for flood indicators between 2024-08-01 and 2024-08-31 using the flood extent workflow. Estimated 3,315 km² of Kerala flagged for flood extent. Approximately 2,715,370 people reside in the affected extent (based on reference density). Event activity peaked around 2024-08-17. Overall model confidence is 68%. Data provenance is simulated demo.",
+    "findings": [
+     "Estimated 3,315 km² of Kerala flagged for flood extent.",
+     "Approximately 2,715,370 people reside in the affected extent (based on reference density).",
+     "Event activity peaked around 2024-08-17."
+    ],
+    "confidence": 0.68,
+    "agent": "SAR Agent",
+    "simulated": true,
+    "generated_at": "2026-09-24 03:55 UTC",
+    "disclaimer": "These results are based on DEMO/simulated data and must NOT be used for operational decisions. Connect real providers for actual satellite processing."
+   },
+   "understanding": {
+    "query_text": "Show flood affected areas in Kerala in August 2024 using SAR data",
+    "raw_text": "Show flood affected areas in Kerala in August 2024 using SAR data",
+    "location": "Kerala",
+    "location_key": "kerala",
+    "bbox": {
+     "min_lng": 74.8,
+     "min_lat": 8.0,
+     "max_lng": 77.6,
+     "max_lat": 12.8
+    },
+    "date_start": "2024-08-01",
+    "date_end": "2024-08-31",
+    "phenomenon": "flood",
+    "data_type": "SAR",
+    "requested_analysis": "flood-mapping",
+    "agent": "sar",
+    "agent_confidence": 1.0,
+    "analysis_type": "flood-mapping",
+    "confidence": 0.97,
+    "explanation": [
+     "Detected location: Kerala (state, India).",
+     "Detected phenomenon: Flood.",
+     "Detected data type preference: SAR.",
+     "Date range 2024-08-01 to 2024-08-31 (month 2024).",
+     "Requested analysis: Flood Mapping.",
+     "Recommended agent: SAR Agent."
+    ]
+   },
+   "execution_trace": {
+    "target_task": "Flood Mapping",
+    "modality": {
+     "id": "sar",
+     "label": "Sentinel-1 C-band SAR (all-weather, day/night)",
+     "sensors": [
+      "Sentinel-1 C-SAR (VV/VH)"
+     ],
+     "constraints": "Backscatter σ⁰ signatures decoded from intensity envelope; specular water ~ low σ⁰."
+    },
+    "tools": [
+     "SAR water mask with threshold segmentation"
+    ],
+    "steps": [
+     {
+      "step": 1,
+      "tool": "SAR water mask with threshold segmentation",
+      "op": "flood-mapping",
+      "detail": "Executed on Kerala Monsoon Flood Footprints (SAR)",
+      "result": {
+       "features": 43,
+       "stats": {
+        "affected_area_km2": 3315.47,
+        "affected_cells": 43,
+        "detected_fraction": 0.021,
+        "estimated_population": 2715370,
+        "population_density_per_km2": 819,
+        "mean_intensity": 0.701,
+        "max_intensity": 0.753,
+        "peak_date": "2024-08-17",
+        "threshold": 0.669
+       },
+       "label": "Flood Mapping"
+      }
+     }
+    ],
+    "confidence": 0.68,
+    "uncertainties": [
+     "Simulated demo dataset — spatial features are illustrative placeholders, not real observations.",
+     "Cross-modal verification carried out on simulated geometry."
+    ]
+   },
+   "modality": {
+    "id": "sar",
+    "label": "Sentinel-1 C-band SAR (all-weather, day/night)",
+    "sensors": [
+     "Sentinel-1 C-SAR (VV/VH)"
+    ],
+    "constraints": "Backscatter σ⁰ signatures decoded from intensity envelope; specular water ~ low σ⁰."
+   },
+   "simulated": true,
+   "agent_plan": {
+    "agent": "sar",
+    "agent_name": "SAR Agent",
+    "model": "sar-flood-watermask-v1 (demo deterministic model)",
+    "description": "Radar-based detection of water, change and ground motion; works through clouds and at night (Sentinel-1).",
+    "datasets_used": [
+     "ds_demo_sar_kerala_flood",
+     "ds_demo_tabular_rainfall_india"
+    ],
+    "steps": [
+     {
+      "op": "flood-mapping",
+      "name": "SAR water mask with threshold segmentation",
+      "params": {}
+     }
+    ],
+    "rationale": "Radar backscatter is reliable for flood/water mapping and change detection regardless of cloud cover."
+   },
+   "id": "ffb975da119b4e53ad0c5fb19d3763e0",
+   "created_at": "2026-09-24T03:55:42.632708+00:00",
+   "updated_at": "2026-09-24T03:55:42.632731+00:00"
   }
  },
  "saved_analyses": {
@@ -477608,6 +479485,19 @@
    "revoked": false,
    "id": "7339864804784e308421253390db78c1",
    "updated_at": "2026-09-24T03:18:13.721697+00:00"
+  },
+  "41e959773d41415098717a69e27b4226": {
+   "session_id": "a0317668-11ca-4ac9-9081-5923e2c99d1d",
+   "user_id": "ebef256a1b6641faaaf6d91790062b96",
+   "refresh_token_hash": "656e7c2214f9f8547e26d5b9857cf111d37ea71d83722e146a67be36068e0a03",
+   "device_label": "Edge · Windows 10/11",
+   "ip_address": "127.0.0.1",
+   "created_at": "2026-09-24T03:53:41.258648+00:00",
+   "last_seen_at": "2026-09-24T03:53:41.258654+00:00",
+   "expires_at": "2026-10-24T03:53:41.258515+00:00",
+   "revoked": false,
+   "id": "41e959773d41415098717a69e27b4226",
+   "updated_at": "2026-09-24T03:53:41.258676+00:00"
   }
  },
  "contacts": {},
